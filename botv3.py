@@ -31,18 +31,6 @@ def format_tweet(frase, autor):
     # Format the tweet as "frase" -autor
     return f'"{frase}" -{autor}'
 
-'''
-def keep_alive():
-    try:
-        # Create a client instance with your API keys
-        client = tweepy.Client(bearer_token, api_key, api_key_secret, access_token, access_token_secret, wait_on_rate_limit=True)
-        
-        # Send a simple request (e.g., fetching your user information)
-        client.get_user("loboshoot")
-    except Exception as e:
-        logger.error(f"Error in keep_alive: {e}")
-
-'''
 
 def tweet_message(client, message):
     try:
@@ -75,8 +63,11 @@ def check_tweet_limit(daily_tweet_count):
 def main(interval):
     # Start the script
     logger.info('Starting the script')
-
-    # Create a Tweepy client
+    
+    '''
+    Create a Tweepy client. Not strictly necessary here since tweet_message() also makes a call every tweet.
+    Just to be safe and not have any issues later down the road if one adds new features to main().
+    '''
     client = tweepy.Client(bearer_token, api_key, api_key_secret, access_token, access_token_secret)
 
     df = load_data()
