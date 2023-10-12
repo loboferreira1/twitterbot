@@ -9,7 +9,7 @@
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/botv3.py",
-            "args": ["-f", "F:\\Scripts\\frasesbd.xlsx", "-i", "9000"],
+            "args": ["-f", "-i"],
             "console": "integratedTerminal",
             "justMyCode": true
         }
